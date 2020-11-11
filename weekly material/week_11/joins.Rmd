@@ -13,7 +13,7 @@ library(stringr)
 
 demog <- fread("data/CAp3_2020_demographics.csv") %>%
   select(year, age, gender, race_ethnicity, county, pop, caloes_region, econ_reg) %>%
-  group_by(county, year) %>%
+  group_by(county) %>%
   summarize(total_pop = sum(pop))
 
 oshpd_payers <- fread("../../midterm/inpatient_payer_ca.csv") %>%
